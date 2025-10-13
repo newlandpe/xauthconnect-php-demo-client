@@ -2,6 +2,8 @@
 
 A demonstration OAuth 2.0 client implementation showcasing integration with XAuthConnect authorization server using PHP.
 
+![Demo Interface](screenshots/demo-interface.png)
+
 ## Features
 
 - **OAuth 2.0 Authorization Code Flow** with PKCE (Proof Key for Code Exchange)
