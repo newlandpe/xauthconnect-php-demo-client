@@ -67,7 +67,7 @@ Update `XAUTHCONNECT_BASE_URL` to point to your XAuthConnect server instance.
 
 ### Initial Authorization
 
-1. Click the "Авторизуватися" (Authorize) button
+1. Click the "Authorize" button
 2. Log in on the XAuthConnect server
 3. You'll be redirected back with an access token
 
