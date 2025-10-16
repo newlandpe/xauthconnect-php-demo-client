@@ -1,5 +1,7 @@
 # XAuthConnect PHP Demo Client
 
+This is a demonstration of the [oauth2-xauthconnect](https://github.com/newland-digital/oauth2-xauthconnect) library, which is a generic OAuth 2.0 client implementation for PHP. This demo was created before the library was created.
+
 A demonstration OAuth 2.0 client implementation showcasing integration with XAuthConnect authorization server using PHP.
 
 ![Demo Interface](screenshots/demo-interface.png)
@@ -22,6 +24,7 @@ A demonstration OAuth 2.0 client implementation showcasing integration with XAut
 - PHP 7.4 or higher
 - PHP extensions: `curl`, `json`, `session`
 - XAuthConnect server running (default: `http://127.0.0.1:8010`)
+- [Composer](https://getcomposer.org/)
 
 ## Installation
 
@@ -31,7 +34,12 @@ git clone https://github.com/newlandpe/xauthconnect-php-demo-client.git
 cd xauthconnect-php-demo-client
 ```
 
-2. Configure the client by editing `client.php`:
+2. Install the dependencies using Composer:
+```bash
+composer require newlandpe/oauth2-xauthconnect
+```
+
+3. Configure the client by editing `client.php`:
 ```php
 const XAUTHCONNECT_BASE_URL = 'http://127.0.0.1:8010';
 const CLIENT_ID = 'test_client_123';
@@ -39,12 +47,12 @@ const CLIENT_SECRET = 'test_secret_key';
 const REDIRECT_URI = 'http://127.0.0.1:8081/client.php';
 ```
 
-3. Start a PHP development server:
+4. Start a PHP development server:
 ```bash
 php -S 127.0.0.1:8081
 ```
 
-4. Open your browser and navigate to:
+5. Open your browser and navigate to:
 ```
 http://127.0.0.1:8081/client.php
 ```

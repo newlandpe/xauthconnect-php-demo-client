@@ -1,0 +1,6 @@
+{
+    "require": {
+        "newlandpe/oauth2-xauthconnect": "^0.1.0"
+    },
+    "minimum-stability": "dev"
+}
