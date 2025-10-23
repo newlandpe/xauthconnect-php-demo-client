@@ -108,19 +108,19 @@ The client automatically:
 
 ```
 .
-├── .gitignore
-├── README.md
-├── client.php
-├── composer.json
-├── composer.lock
-├── screenshots
-│   └── demo-interface.png
-└── templates
-    ├── dashboard.php
-    ├── expired_session.php
-    ├── footer.php
-    ├── header.php
-    └── login.php
++-- .gitignore
++-- README.md
++-- client.php
++-- composer.json
++-- composer.lock
++-- screenshots/
+|   \-- demo-interface.png
+\-- templates/
+    +-- dashboard.php
+    +-- expired_session.php
+    +-- footer.php
+    +-- header.php
+    \-- login.php
 ```
 
 ## API Endpoints Used
