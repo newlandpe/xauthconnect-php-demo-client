@@ -114,8 +114,23 @@ The client library handles token expiration and refresh automatically when using
 
 ## Troubleshooting
 
-- **General Errors**: Check your PHP error logs for detailed messages from the `oauth2-xauthconnect` library.
-- **Connection Issues**: Verify the `issuer` URL in `client.php` is correct and that the authorization server is accessible.
+### "Invalid state or code_verifier" Error
+
+- Ensure session is properly maintained, as the `oauth2-xauthconnect` library relies on it for PKCE and state parameters.
+- Check that the redirect URI exactly matches the registered URI in your `client.php` configuration and on the authorization server.
+- Verify that cookies are enabled in your browser.
+
+### Token Refresh Failures
+
+- If the `oauth2-xauthconnect` library fails to refresh the token, check if the refresh token itself has expired or been revoked.
+- Verify client credentials (`clientId`, `clientSecret`) are correct in `client.php`.
+- Ensure the XAuthConnect server is running and accessible.
+
+### Connection Issues
+
+- Verify the `issuer` URL in your `client.php` configuration is correct.
+- Check that the authorization server is accessible from where the demo client is running.
+- Review PHP error logs for details from the `oauth2-xauthconnect` library or cURL errors.
 
 ## Development
 
