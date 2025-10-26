@@ -1,8 +1,6 @@
 # XAuthConnect PHP Demo Client
 
-This is a demonstration of the [oauth2-xauthconnect](https://github.com/newlandpe/oauth2-xauthconnect) library, which is a generic OAuth 2.0 client implementation for PHP. This demo was created before the library was created.
-
-A demonstration OAuth 2.0 client implementation showcasing integration with XAuthConnect authorization server using PHP.
+This is a demonstration of the [oauth2-xauthconnect](https://github.com/newlandpe/oauth2-xauthconnect) library, a robust OAuth 2.0 client implementation for PHP. This demo showcases integration with an XAuthConnect authorization server, leveraging the library for streamlined authentication and authorization flows, including OIDC Discovery.
 
 ![Demo Interface](screenshots/demo-interface.png)
 
@@ -10,14 +8,13 @@ A demonstration OAuth 2.0 client implementation showcasing integration with XAut
 
 - **OAuth 2.0 Authorization Code Flow** with PKCE (Proof Key for Code Exchange)
 - **Token Management**: Access token, refresh token with automatic refresh
-- **Real-time Token Status**: Live countdown timer showing token expiration
 - **Complete Token Operations**:
   - Token refresh
   - Token introspection
   - Token revocation
   - User data retrieval
 - **Session Management**: Automatic token validation and recovery
-- **User-Friendly Interface**: Bootstrap 5-based responsive design
+- **User-Friendly Interface**: Semantic UI-based responsive design
 
 ## Requirements
 
@@ -27,6 +24,8 @@ A demonstration OAuth 2.0 client implementation showcasing integration with XAut
 - [Composer](https://getcomposer.org/)
 
 ## Installation
+
+To get started with the demo client, follow these steps:
 
 1. Clone this repository:
 ```bash
@@ -39,12 +38,14 @@ cd xauthconnect-php-demo-client
 composer require newlandpe/oauth2-xauthconnect
 ```
 
-3. Configure the client by editing `client.php`:
+3. Configure the client by editing the `clientId`, `clientSecret`, `redirectUri`, and `issuer` parameters in `client.php`:
 ```php
-const XAUTHCONNECT_BASE_URL = 'http://127.0.0.1:8010';
-const CLIENT_ID = 'test_client_123';
-const CLIENT_SECRET = 'test_secret_key';
-const REDIRECT_URI = 'http://127.0.0.1:8081/client.php';
+    $provider = new XAuthConnectProvider([
+        'clientId'     => 'test_client_123',
+        'clientSecret' => 'test_secret_key',
+        'redirectUri'  => 'http://127.0.0.1:8081/client.php',
+        'issuer'       => 'http://127.0.0.1:8010',
+    ]);
 ```
 
 4. Start a PHP development server:
@@ -59,17 +60,7 @@ http://127.0.0.1:8081/client.php
 
 ## Configuration
 
-### Client Credentials
-
-Make sure your client is registered on the XAuthConnect server with matching credentials:
-
-- **Client ID**: Must match `CLIENT_ID` constant
-- **Client Secret**: Must match `CLIENT_SECRET` constant
-- **Redirect URI**: Must be whitelisted on the authorization server
-
-### Server URL
-
-Update `XAUTHCONNECT_BASE_URL` to point to your XAuthConnect server instance.
+Client credentials (`clientId`, `clientSecret`) and the `redirectUri` must be configured in `client.php` within the `XAuthConnectProvider` constructor. The `issuer` URL should point to your XAuthConnect authorization server instance.
 
 ## Usage
 
@@ -91,11 +82,7 @@ Once authorized, you can:
 
 ### Automatic Token Management
 
-The client automatically:
-- Monitors token expiration with a visual countdown
-- Validates token status every 30 seconds
-- Attempts to refresh expired tokens
-- Handles session recovery gracefully
+The client library handles token expiration and refresh automatically when using the provided methods.
 
 ## Security Features
 
@@ -123,36 +110,10 @@ The client automatically:
     \-- login.php
 ```
 
-## API Endpoints Used
-
-The client interacts with the following XAuthConnect endpoints:
-
-- `GET /xauth/authorize` - OAuth authorization
-- `POST /xauth/token` - Token exchange
-- `POST /xauth/token/refresh` - Token refresh
-- `POST /xauth/introspect` - Token introspection
-- `POST /xauth/revoke` - Token revocation
-- `GET /xauth/user` - User information
-
 ## Troubleshooting
 
-### "Invalid state or code_verifier" Error
-
-- Ensure PKCE parameters are correctly stored in the session
-- Check that the redirect URI exactly matches the registered URI
-- Verify that cookies are enabled in your browser
-
-### Token Refresh Failures
-
-- Check that the refresh token hasn't expired
-- Verify client credentials are correct
-- Ensure the XAuthConnect server is running
-
-### Connection Issues
-
-- Verify the `XAUTHCONNECT_BASE_URL` is correct
-- Check that the authorization server is accessible
-- Review PHP error logs for cURL errors
+- **General Errors**: Check your PHP error logs for detailed messages from the `oauth2-xauthconnect` library.
+- **Connection Issues**: Verify the `issuer` URL in `client.php` is correct and that the authorization server is accessible.
 
 ## Development
 
@@ -168,11 +129,10 @@ You can test various OAuth flows:
 
 ### Customization
 
-The interface uses Bootstrap 5 and can be easily customized:
+The interface uses Semantic UI and can be easily customized:
 
-- Modify CSS in the `<style>` section
-- Update text and labels throughout the HTML
-- Adjust token check interval (default: 30 seconds)
+- Modify CSS in the `<style>` section of `templates/header.php`
+- Update text and labels throughout the HTML templates
 
 ## Contributing
 
