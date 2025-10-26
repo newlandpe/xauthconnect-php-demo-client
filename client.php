@@ -16,8 +16,8 @@ try {
     $provider = new XAuthConnectProvider([
         'clientId'     => 'test_client_123',
         'clientSecret' => 'test_secret_key',
-        'redirectUri'  => 'http://127.0.0.1:8083/client.php',
-        'issuer'       => 'https://connect.fyennyi.pp.ua',
+        'redirectUri'  => 'http://127.0.0.1:8081/client.php',
+        'issuer'       => 'http://127.0.0.1:8010',
     ]);
 } catch (\RuntimeException $e) {
     $pageTitle = 'Error';
