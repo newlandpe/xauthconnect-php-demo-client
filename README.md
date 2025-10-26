@@ -1,6 +1,8 @@
 # XAuthConnect PHP Demo Client
 
-This is a demonstration of the [oauth2-xauthconnect](https://github.com/newlandpe/oauth2-xauthconnect) library, a robust OAuth 2.0 client implementation for PHP. This demo showcases integration with an XAuthConnect authorization server, leveraging the library for streamlined authentication and authorization flows, including OIDC Discovery.
+This is a demonstration of the [oauth2-xauthconnect](https://github.com/newlandpe/oauth2-xauthconnect) library, a robust OAuth 2.0 client implementation for PHP.
+
+This demo showcases integration with an XAuthConnect authorization server, leveraging the library for streamlined authentication and authorization flows, including OIDC Discovery.
 
 ![Demo Interface](screenshots/demo-interface.png)
 
