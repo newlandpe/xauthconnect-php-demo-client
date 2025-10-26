@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XAuthConnect Demo Client</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title><?= $pageTitle ?></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css">
     <style>
         body {
             background: #f5f5f5;
             padding: 20px;
         }
-        .container {
+        .ui.container {
             max-width: 900px;
             margin: 0 auto;
             background: white;
@@ -18,40 +18,34 @@
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-        h1 {
+        h1.ui.header {
             color: #333;
             margin-bottom: 30px;
             font-size: 28px;
             font-weight: 600;
         }
-        .badge {
-            font-weight: 500;
-        }
-        code {
-            color: #333;
-        }
-        .text-warning-bold {
-            font-weight: bold;
-            color: #ffc107;
-        }
-        .text-danger-bold {
-            font-weight: bold;
-            color: #dc3545;
+        pre {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🔐 XAuthConnect Demo Client</h1>
+    <div class="ui container">
+        <h1 class="ui header">🔐 XAuthConnect Demo Client</h1>
 
-        <?php if ($error): ?>
-            <div class="alert alert-danger">
-                <strong>Error:</strong> <?= htmlspecialchars($error) ?>
+        <?php if (!empty($error)): ?>
+            <div class="ui negative message">
+                <div class="header">Error:</div>
+                <p><?= htmlspecialchars($error) ?></p>
             </div>
         <?php endif; ?>
 
-        <?php if ($success): ?>
-            <div class="alert alert-success">
-                <strong>Success:</strong> <?= htmlspecialchars($success) ?>
+        <?php if (!empty($success)): ?>
+            <div class="ui positive message">
+                <div class="header">Success:</div>
+                <p><?= htmlspecialchars($success) ?></p>
             </div>
         <?php endif; ?>
