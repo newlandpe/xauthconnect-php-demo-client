@@ -28,35 +28,35 @@ This is a demonstration of the [oauth2-xauthconnect](https://github.com/newlandp
 To get started with the demo client, follow these steps:
 
 1. Clone this repository:
-```bash
-git clone https://github.com/newlandpe/xauthconnect-php-demo-client.git
-cd xauthconnect-php-demo-client
-```
+   ```bash
+   git clone https://github.com/newlandpe/xauthconnect-php-demo-client.git
+   cd xauthconnect-php-demo-client
+   ```
 
 2. Install the dependencies using Composer:
-```bash
-composer require newlandpe/oauth2-xauthconnect
-```
+   ```bash
+   composer require newlandpe/oauth2-xauthconnect
+   ```
 
 3. Configure the client by editing the `clientId`, `clientSecret`, `redirectUri`, and `issuer` parameters in `client.php`:
-```php
-    $provider = new XAuthConnectProvider([
-        'clientId'     => 'test_client_123',
-        'clientSecret' => 'test_secret_key',
-        'redirectUri'  => 'http://127.0.0.1:8081/client.php',
-        'issuer'       => 'http://127.0.0.1:8010',
-    ]);
-```
+   ```php
+   $provider = new XAuthConnectProvider([
+       'clientId'     => 'test_client_123',
+       'clientSecret' => 'test_secret_key',
+       'redirectUri'  => 'http://127.0.0.1:8081/client.php',
+       'issuer'       => 'http://127.0.0.1:8010',
+   ]);
+   ```
 
 4. Start a PHP development server:
-```bash
-php -S 127.0.0.1:8081
-```
+   ```bash
+   php -S 127.0.0.1:8081
+   ```
 
 5. Open your browser and navigate to:
-```
-http://127.0.0.1:8081/client.php
-```
+   ```
+   http://127.0.0.1:8081/client.php
+   ```
 
 ## Configuration
 
