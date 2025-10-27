@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 ini_set('display_errors', '1');
@@ -17,7 +18,7 @@ try {
         'clientId'     => 'test_client_123',
         'clientSecret' => 'test_secret_key',
         'redirectUri'  => 'http://127.0.0.1:8081/client.php',
-        'issuer'       => 'http://127.0.0.1:8010',
+        'issuer'       => 'http://127.0.0.1:8010/xauth',
     ]);
 } catch (\RuntimeException $e) {
     $pageTitle = 'Error';
